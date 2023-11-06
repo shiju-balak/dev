@@ -23,7 +23,7 @@
 						}
 					},
 					"fieldList": [
-						"childItems"
+						"lastModified"
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
@@ -57,7 +57,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Get Metadata').output.childItems",
+						"value": "@activity('Get Metadata').output.lastModified",
 						"type": "Expression"
 					},
 					"isSequential": true,
