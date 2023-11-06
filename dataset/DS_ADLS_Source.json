@@ -19,7 +19,7 @@
 					"value": "@dataset().filename",
 					"type": "Expression"
 				},
-				"fileSystem": "demo"
+				"fileSystem": "outputtest-04-11-2023"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
