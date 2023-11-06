@@ -1,5 +1,5 @@
 {
-	"name": "PL_ADLS_ADLS_COPY_LASTMODIFIED_copy1",
+	"name": "PL_ADLS_ADLS_COPY_",
 	"properties": {
 		"activities": [
 			{
@@ -72,14 +72,6 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
-										"modifiedDatetimeStart": {
-											"value": "@adddays(utcnow(),-1)",
-											"type": "Expression"
-										},
-										"modifiedDatetimeEnd": {
-											"value": "@utcnow()",
-											"type": "Expression"
-										},
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
