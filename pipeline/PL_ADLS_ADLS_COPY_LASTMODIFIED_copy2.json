@@ -1,5 +1,5 @@
 {
-	"name": "PL_ADLS_ADLS_COPY_DELETE",
+	"name": "PL_ADLS_ADLS_COPY_LASTMODIFIED_copy2",
 	"properties": {
 		"activities": [
 			{
@@ -28,6 +28,14 @@
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
 						"recursive": true,
+						"modifiedDatetimeStart": {
+							"value": "@adddays(utcnow(),-1)",
+							"type": "Expression"
+						},
+						"modifiedDatetimeEnd": {
+							"value": "@utcnow()",
+							"type": "Expression"
+						},
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -72,6 +80,14 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
+										"modifiedDatetimeStart": {
+											"value": "@adddays(utcnow(),-1)",
+											"type": "Expression"
+										},
+										"modifiedDatetimeEnd": {
+											"value": "@utcnow()",
+											"type": "Expression"
+										},
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
@@ -124,44 +140,6 @@
 									}
 								}
 							]
-						},
-						{
-							"name": "Delete",
-							"type": "Delete",
-							"dependsOn": [
-								{
-									"activity": "Copy data",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"dataset": {
-									"referenceName": "DS_ADLS_Source",
-									"type": "DatasetReference",
-									"parameters": {
-										"filename": {
-											"value": "@item().name",
-											"type": "Expression"
-										}
-									}
-								},
-								"enableLogging": false,
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								}
-							}
 						}
 					]
 				}
