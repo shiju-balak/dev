@@ -1,0 +1,19 @@
+{
+	"name": "DS_ADLS_SQL_PRQ_SRC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_Source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "raw"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
