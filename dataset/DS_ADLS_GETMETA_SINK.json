@@ -10,10 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileSystem": {
-					"value": "@concat('output','-',formatDateTime(utcNow(),'yyyy-mm-dd'))\n\n",
-					"type": "Expression"
-				}
+				"fileSystem": "raw"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
