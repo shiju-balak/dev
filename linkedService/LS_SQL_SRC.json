@@ -1,0 +1,16 @@
+{
+	"name": "LS_SQL_SRC",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=C11-LGBKTXD0OB0;initial catalog=AdventureWorks2019;user id=sa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwNzE3ZGUyZC02MjZmLTQzZGYtOWE4Ni01ZjZmNTM3Mzk4MTgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime-sql",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
