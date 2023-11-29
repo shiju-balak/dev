@@ -21,13 +21,15 @@
 						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "ParquetSink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings",
 							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
-							"type": "ParquetWriteSettings"
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
@@ -48,7 +50,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_SQL_PRQ_SRC",
+						"referenceName": "DS_ADLS_GETMETA_SINK",
 						"type": "DatasetReference"
 					}
 				]
