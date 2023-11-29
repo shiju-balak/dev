@@ -5,32 +5,26 @@
 			"referenceName": "LS_SQL_SRC",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"schema_name": {
+				"type": "string"
+			},
+			"table_name": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "SqlServerTable",
-		"schema": [
-			{
-				"name": "DepartmentID",
-				"type": "smallint",
-				"precision": 5
-			},
-			{
-				"name": "Name",
-				"type": "nvarchar"
-			},
-			{
-				"name": "GroupName",
-				"type": "nvarchar"
-			},
-			{
-				"name": "ModifiedDate",
-				"type": "datetime",
-				"precision": 23,
-				"scale": 3
-			}
-		],
+		"schema": [],
 		"typeProperties": {
-			"schema": "HumanResources",
-			"table": "Department"
+			"schema": {
+				"value": "@dataset().schema_name",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().table_name",
+				"type": "Expression"
+			}
 		}
 	}
 }
