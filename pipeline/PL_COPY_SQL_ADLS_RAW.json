@@ -156,7 +156,10 @@
 							"typeProperties": {
 								"source": {
 									"type": "SqlServerSource",
-									"sqlReaderQuery": "SELECT '@{pipeline().DataFactory}' as DataFactory_Name,\n'@{pipeline().Pipeline}' as Pipeline_Name,\n'@{pipeline().RunId}' as RunId,\n'@{pipeline().TriggerType}' as TriggerType,\n'@{pipeline().TriggerId}' as TriggerId,\n'@{pipeline().TriggerName}' as TriggerName,\n'@{pipeline().TriggerTime}' as TriggerTime,\n'@{activity('Copy data').output.rowsCopied}' as rowsCopied,\n'@{activity('Copy data').output.rowsRead}' as RowsRead,\n'@{activity('Copy data').output.executionDetails[0].source.type}' as Source_Type,\n'@{activity('Copy data').output.executionDetails[0].sink.type}' as Sink_Type,\n'@{activity('Copy data').output.executionDetails[0].status}' as Execution_Status,\n'@{activity('Copy data').output.executionDetails[0].start}' as CopyActivity_Start_Time,\n'@{utcnow()}' as CopyActivity_End_Time",
+									"sqlReaderQuery": {
+										"value": "SELECT '@{pipeline().DataFactory}' as DataFactory_Name,\n'@{pipeline().Pipeline}' as Pipeline_Name,\n'@{pipeline().RunId}' as RunId,\n'@{pipeline().TriggerType}' as TriggerType,\n'@{pipeline().TriggerId}' as TriggerId,\n'@{pipeline().TriggerName}' as TriggerName,\n'@{pipeline().TriggerTime}' as TriggerTime,\n'@{activity('Copy data').output.rowsCopied}' as rowsCopied,\n'@{activity('Copy data').output.rowsRead}' as RowsRead,\n'@{activity('Copy data').output.executionDetails[0].source.type}' as Source_Type,\n'@{activity('Copy data').output.executionDetails[0].sink.type}' as Sink_Type,\n'@{activity('Copy data').output.executionDetails[0].status}' as Execution_Status,\n'@{activity('Copy data').output.executionDetails[0].start}' as CopyActivity_Start_Time,\n'@{utcnow()}' as CopyActivity_End_Time",
+										"type": "Expression"
+									},
 									"queryTimeout": "02:00:00",
 									"partitionOption": "None"
 								},
@@ -196,10 +199,6 @@
 									"parameters": {
 										"filename": {
 											"value": "@concat(item().TABLE_SCHEMA,'_',item().TABLE_NAME,'_','Logging',utcNow())",
-											"type": "Expression"
-										},
-										"dirname": {
-											"value": "@item().TABLE_NAME",
 											"type": "Expression"
 										}
 									}

@@ -8,9 +8,6 @@
 		"parameters": {
 			"filename": {
 				"type": "string"
-			},
-			"dirname": {
-				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -22,10 +19,7 @@
 					"value": "@dataset().filename",
 					"type": "Expression"
 				},
-				"folderPath": {
-					"value": "@dataset().dirname",
-					"type": "Expression"
-				},
+				"folderPath": "Logging",
 				"fileSystem": "raw"
 			},
 			"columnDelimiter": ",",
