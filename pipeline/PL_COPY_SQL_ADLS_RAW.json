@@ -200,6 +200,10 @@
 										"filename": {
 											"value": "@concat(item().TABLE_SCHEMA,'_',item().TABLE_NAME,'_','Logging',utcNow())",
 											"type": "Expression"
+										},
+										"foldername": {
+											"value": "@concat('logging','_')",
+											"type": "Expression"
 										}
 									}
 								}
