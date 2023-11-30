@@ -208,11 +208,41 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "Wait",
+							"type": "Wait",
+							"dependsOn": [
+								{
+									"activity": "Copy data",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [
+								{
+									"name": "rowread",
+									"value": "@activity('Copy data').output.rowsRead"
+								},
+								{
+									"name": "rowcopied",
+									"value": "@activity('Copy data').output.rowsCopied"
+								}
+							],
+							"typeProperties": {
+								"waitTimeInSeconds": 1
+							}
 						}
 					]
 				}
 			}
 		],
+		"variables": {
+			"row_count": {
+				"type": "String"
+			}
+		},
 		"folder": {
 			"name": "Demo"
 		},
